@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import VendorApp from './VendorApp/VendorApp';
+// import ISOTaskApp from './ISOTaskApp/ISOTaskApp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <VendorApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <ISOTaskApp />
+//   </React.StrictMode>,
+//   document.getElementById('root2')
+// );

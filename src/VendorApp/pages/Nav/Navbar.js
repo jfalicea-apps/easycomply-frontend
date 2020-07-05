@@ -34,12 +34,13 @@ class Navbar extends React.Component {
             <Link to="/">Home</Link>
           </p>
           <p>
-            <Link to="/policy">Policy</Link>
+            <Link to="/vmpolicy">Policy</Link>
           </p>
           <p>
             <Link to="/vendor">Vendor</Link>
           </p>
         </div>
+        <hr />
       </>
     );
   }
