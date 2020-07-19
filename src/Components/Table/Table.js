@@ -15,7 +15,7 @@ class Table extends React.Component {
 
   buildRows() {
     if (!this.props.rows) {
-      return <h1>Hello</h1>;
+      return <h3>Nothing to see here!</h3>;
     }
     return this.props.rows();
   }
@@ -32,5 +32,5 @@ class Table extends React.Component {
   }
 }
 
-//This copoenent takes two props.  1) Array of Headers 2) Function for rows.
+//This component takes two props.  1) Array of Headers 2) Function for rows.
 export default Table;

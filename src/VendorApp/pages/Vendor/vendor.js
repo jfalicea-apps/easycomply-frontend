@@ -6,7 +6,7 @@ import Table from '../../../Components/Table/Table';
 import AddVendorForm from '../../../Components/Forms/AddVendorForm';
 import { Link } from 'react-router-dom';
 import UpdateVendorForm from '../../../Components/Forms/UpdateVendorForm';
-
+import DueDiligenceReport from '../../../Components/Forms/DueDiligenceForm';
 class Vendor extends Component {
   constructor(props) {
     super(props);
@@ -104,47 +104,17 @@ class Vendor extends Component {
               >
                 edit
               </i>
-              <h3>Vendor Name: {this.state.currentSelect.vendorName}</h3>
-              <h3>
-                Vendor Description: {this.state.currentSelect.vendorDescription}
-              </h3>
-              <h3>
-                Overall Risk:{' '}
-                {this.state.currentSelect.vendorRisk.toUpperCase()}
-              </h3>
-              <h3>
-                Strategic Risk:{' '}
-                {this.state.currentSelect.stratRisk.toUpperCase()}
-              </h3>
-              <h3>
-                Financial Risk: {this.state.currentSelect.finRisk.toUpperCase()}
-              </h3>
-              <h3>
-                Operational Risk:{' '}
-                {this.state.currentSelect.operRisk.toUpperCase()}
-              </h3>
-              <h3>
-                Compliance Risk:{' '}
-                {this.state.currentSelect.compRisk.toUpperCase()}
-              </h3>
-              <h3>
-                Legal Risk: {this.state.currentSelect.legalRisk.toUpperCase()}
-              </h3>
-              <h3>
-                Reputational Risk:{' '}
-                {this.state.currentSelect.repRisk.toUpperCase()}
-              </h3>
-              <hr />
-              <h3>Contract Infromation</h3>
-              <h3>
-                Start Date: {this.state.currentSelect.vendorContractStart}
-              </h3>
-              <h3>End Date: {this.state.currentSelect.vendorContractEnd}</h3>
-              <h3>
-                Cancellation Lead Time:{' '}
-                {this.state.currentSelect.vendorContractCancelLeadTime}
-              </h3>
+              <button
+                id="due-diligence"
+                className="material-icons"
+                onClick={(e) => {
+                  this.setState({ modalContent: e.target.id });
+                }}
+              >
+                VDD
+              </button>
             </div>
+            <DueDiligenceReport data={this.state.currentSelect} />
           </>
         );
       case 'update-vendor':
@@ -157,6 +127,8 @@ class Vendor extends Component {
             state={{ ...this.state }}
           />
         );
+      case 'due-diligence':
+        return <h1>meep meep</h1>;
       default:
         return null;
     }
@@ -374,10 +346,6 @@ class Vendor extends Component {
               rows={this.tableRow}
             />
           </div>
-          <br />
-          <hr />
-          <h2>Due Diligence Review</h2>
-          <hr />
         </main>
 
         {/* modal here: */}

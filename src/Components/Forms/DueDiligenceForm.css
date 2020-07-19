@@ -1,0 +1,13 @@
+.container {
+  height: auto;
+  width: 1400px;
+  border: 1px black solid;
+}
+
+.field {
+  display: inline;
+}
+
+.section-splitter {
+  width: 80%;
+}
